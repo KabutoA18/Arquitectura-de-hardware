@@ -1,0 +1,67 @@
+from machine import Pin as pin
+import time
+
+boton1 = pin(14, pin.IN)
+boton2 = pin(27, pin.IN)
+boton3 = pin(26, pin.IN)
+boton4 = pin(25, pin.IN)
+led1=pin(15,pin.OUT)
+led2=pin(2,pin.OUT)
+led3=pin(4,pin.OUT)
+led4=pin(16,pin.OUT)
+led5=pin(5,pin.OUT)
+led6=pin(18,pin.OUT)
+led7=pin(19,pin.OUT)
+led8=pin(21,pin.OUT)
+led9=pin(22,pin.OUT)
+led10=pin(23,pin.OUT)
+while True:
+  secuencia1 = boton1.value() 
+  if secuencia1: 
+    led1.on()
+    led3.on()
+    led5.on()
+    led7.on()
+    led9.on()
+  print(secuencia1, "secuancia1 activa")
+  time.sleep_ms(3000)
+    
+
+  secuencia2 = boton2.value()
+  if secuencia2: 
+    led2.on()
+    led4.on()
+    led6.on()
+    led8.on()
+    led10.on()
+  print(secuencia2, "secuencia2 activa")
+  time.sleep_ms(3000)
+
+  secuencia3 = boton3.value()
+  if secuencia3: 
+    led1.on()
+    led5.on()
+    led10.on()
+  print(secuencia3, "secuencia 3, activa")
+  time.sleep_ms(3000)
+
+  secuencia4 = boton4.value()
+  if secuencia4: 
+    led3.on()
+    led5.on()
+    led8.on()
+  print(secuencia4, "secuencia 4, aciva")
+  time.sleep_ms(3000)
+
+  if secuencia1 == True:
+    
+    led1.off()
+    led2.off()
+    led3.off()
+    led4.off()
+    led5.off()
+    led6.off()
+    led7.off()
+    led8.off()
+    led9.off()
+    led10.off()
